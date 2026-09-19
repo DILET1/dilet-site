@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Dilet</title>
+  <meta name="description" content="Resume and downloadable CV for Dilet.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html" aria-current="page">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 8px;">
+      <div class="wrap">
+        <div class="hero-eyebrow">// Resume</div>
+        <h1>Resume</h1>
+        <p class="lede">Download a PDF, or read the highlights below.</p>
+      </div>
+    </section>
+
+    <section style="padding-top: 8px;">
+      <div class="wrap">
+
+        <div class="resume-actions">
+          <a class="btn btn-primary" href="assets/resume.pdf" download>Download PDF resume</a>
+        </div>
+
+        <div class="placeholder-note">
+          Placeholder note: this button currently points to <code>assets/resume.pdf</code>, which
+          doesn't exist yet. Export your resume as a PDF and save it at that exact path (see the
+          README for where the assets folder is) and the download button will work as-is.
+        </div>
+
+        <h2 style="margin-top: 40px;">Highlights</h2>
+        <ul style="color: var(--text-dim); padding-left: 1.2em;">
+          <li>UCLA — B.S. Computer Science &amp; Physics (double major), in progress</li>
+          <li>USACO Gold, 2024</li>
+          <li>Solo developer, singleplayer space combat game (Unreal Engine 5, C++)</li>
+          <li>Undergraduate researcher, thermal/fluid dynamics lab (data center cooling)</li>
+        </ul>
+
+        <div class="placeholder-note">
+          Placeholder note: replace the bullet list above with your real resume content, or embed
+          the PDF directly using an &lt;iframe&gt; or &lt;embed&gt; tag if you'd rather it render
+          inline instead of only downloading.
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

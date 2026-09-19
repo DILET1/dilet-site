@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Dilet</title>
+  <meta name="description" content="About Dilet — background, coursework, and current focus.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 8px;">
+      <div class="wrap">
+        <div class="hero-eyebrow">// About</div>
+        <h1>About</h1>
+      </div>
+    </section>
+
+    <section style="padding-top: 8px;">
+      <div class="wrap">
+        <p>
+          I'm a sophomore at UCLA, double-majoring in Computer Science and Physics — I started
+          as a Physics major and added CS as a second major partway through. I'm currently taking
+          the Physics 115A–115C quantum mechanics sequence, and quantum computing is the direction
+          I'm most drawn to for the future.
+        </p>
+        <p>
+          My technical background started in competitive programming: years of algorithmic
+          problem-solving in C++, capped off by passing USACO Gold in 2024. That background is
+          what let me pick up systems-level game development from scratch — I hadn't touched
+          Unreal Engine or 3D tooling before starting my current solo project, but the
+          problem-solving muscle transferred directly.
+        </p>
+        <p>
+          Right now I also work in a university thermal/fluid dynamics lab, researching cooling
+          systems for data centers — an area that sits right at the intersection of physics and
+          the kind of infrastructure the entire software industry increasingly depends on. I'm
+          still deciding whether this becomes a long-term specialization or stays one thread among
+          several.
+        </p>
+        <p>
+          Outside of coursework and projects, I'm a hobbyist mechanic — I work on Mazda 13B rotary
+          engines — and I've been getting into laser cutting for small fabrication projects. I run
+          a mixed Windows/Linux setup at home, which is as much a hobby as anything else.
+        </p>
+
+        <div class="placeholder-note">
+          Placeholder note: this is a first draft of your bio — edit the wording above to sound
+          like you before publishing. Nothing here should stay as generic filler.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

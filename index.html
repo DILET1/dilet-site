@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dilet</title>
+  <meta name="description" content="Dilet — CS &amp; Physics student at UCLA. Competitive programming, systems-driven game development, and thermal engineering research.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-eyebrow">// Dilet</div>
+        <h1>CS &amp; Physics @ UCLA. I build systems that have to actually work — in code, and under physical constraints.</h1>
+        <p class="lede">
+          Competitive programmer (USACO Gold) turned solo game systems developer, currently doing
+          thermal/fluid dynamics research on data center cooling. Interested in where computation
+          meets physics — most recently that's meant quantum computing coursework and PID-driven
+          flight models.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="projects/index.html">View projects</a>
+          <a class="btn" href="resume.html">Resume</a>
+          <a class="btn" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title">Selected work</div>
+        <div class="card-grid">
+
+          <a class="card" href="projects/space-game.html">
+            <span class="tag">Unreal Engine 5 · C++</span>
+            <h3>Solo space combat game</h3>
+            <p>A singleplayer space combat game built from scratch over a summer — Newtonian
+              flight model, PID-controlled enemy AI, and a data-driven campaign system.</p>
+          </a>
+
+          <a class="card" href="projects/competitive-programming.html">
+            <span class="tag">C++ · Algorithms</span>
+            <h3>Competitive programming</h3>
+            <p>USACO Gold (2024). Years of algorithmic problem solving — the background that
+              everything else here is built on.</p>
+          </a>
+
+          <a class="card" href="projects/research.html">
+            <span class="tag">Research · Thermal / Fluid Dynamics</span>
+            <h3>Data center cooling research</h3>
+            <p>Undergraduate research in a university thermal/fluid dynamics lab, focused on
+              cooling systems for data centers.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

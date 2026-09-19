@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solo Space Combat Game — Dilet</title>
+  <meta name="description" content="A solo-developed singleplayer space combat game built in Unreal Engine 5.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="../index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="project-header">
+      <div class="wrap">
+        <span class="tag">Unreal Engine 5 · C++ · Solo project</span>
+        <h1>Solo Space Combat Game</h1>
+        <p>A singleplayer space combat game, designed and built alone from a standing start with
+          no prior Unreal Engine or 3D tooling experience.</p>
+        <div class="meta-row">
+          <span>Engine: Unreal Engine 5 (C++)</span>
+          <span>Status: in active development</span>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap project-body">
+
+        <div class="media-placeholder">
+          Add a gameplay clip, GIF, or screenshots here before publishing —
+          this is the first thing an employer will look at.
+        </div>
+
+        <h2>What it is</h2>
+        <p>
+          A singleplayer space combat game aiming for the feel of mid-Cold-War aerial combat
+          transposed into space — think Freelancer, Starlancer, and Everspace as reference
+          points, with Armored Core 6's mission-replay structure and Trepang2 / Need for Speed:
+          Most Wanted's diegetic reality-break techniques as design influences for the narrative
+          layer.
+        </p>
+
+        <h2>Flight model &amp; combat</h2>
+        <ul>
+          <li>Assisted Newtonian physics: flight assist authority degrades at high velocity,
+            making inertial coasting an emergent, skill-rewarding technique rather than a
+            scripted mechanic.</li>
+          <li>Delta-v as the core resource the player manages, rather than an abstracted fuel
+            bar.</li>
+          <li>Subsystem damage, aspect-limited missiles that require earned firing geometry, and
+            an EW/jamming system with a home-on-jam tradeoff.</li>
+          <li>Enemy AI driven by PID controllers, layered into a green/veteran/ace skill
+            hierarchy.</li>
+        </ul>
+
+        <h2>Systems architecture</h2>
+        <p>
+          The campaign layer separates static authored data (missions, ship loadouts) from
+          mutable runtime state (which pilots are alive, which carriers exist, campaign
+          progress), using Unreal's DataAsset/DataTable system for the former and GameInstance
+          state for the latter. This is the same static-vs-mutable split that shows up in most
+          real game and simulation architectures, and it's the piece I spent the most deliberate
+          design time on.
+        </p>
+
+        <h2>What I learned building it</h2>
+        <ul>
+          <li>Went from zero Unreal/Blender experience to implementing custom C++ Actor and Pawn
+            classes, PID-controlled flight and AI systems, and a data-driven world state — in
+            one summer.</li>
+          <li>Applied a competitive-programming background (C++, algorithmic thinking) directly
+            to game systems programming, which turned out to transfer far more than I expected
+            going in.</li>
+          <li>Practiced scope discipline: art assets and tooling complexity were deliberately
+            deferred so the flight model and combat loop could be prototyped first.</li>
+        </ul>
+
+        <div class="placeholder-note">
+          Placeholder note: add a link to a devlog, trailer, or source repo here once you have
+          something shareable, and swap this writeup's tone/detail level to match how far along
+          the project is when you publish.
+        </div>
+
+        <a class="back-link" href="index.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="../contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

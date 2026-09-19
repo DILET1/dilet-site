@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Dilet</title>
+  <meta name="description" content="Projects by Dilet — game development, competitive programming, and research.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="../index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 8px;">
+      <div class="wrap">
+        <div class="hero-eyebrow">// Projects</div>
+        <h1>Projects</h1>
+        <p class="lede">A mix of shipped systems, competitive results, and ongoing research.</p>
+      </div>
+    </section>
+
+    <section style="padding-top: 8px;">
+      <div class="wrap">
+        <div class="card-grid">
+
+          <a class="card" href="space-game.html">
+            <span class="tag">Unreal Engine 5 · C++</span>
+            <h3>Solo space combat game</h3>
+            <p>Newtonian flight model, PID-controlled AI, data-driven campaign state — built from
+              zero prior Unreal experience.</p>
+          </a>
+
+          <a class="card" href="competitive-programming.html">
+            <span class="tag">C++ · Algorithms</span>
+            <h3>Competitive programming</h3>
+            <p>USACO Gold (2024) and years of algorithmic problem solving in C++.</p>
+          </a>
+
+          <a class="card" href="research.html">
+            <span class="tag">Research · Thermal / Fluid Dynamics</span>
+            <h3>Data center cooling research</h3>
+            <p>Undergraduate research on cooling systems in a university thermal/fluid dynamics
+              lab.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="../contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+/* ==========================================================================
+   Dilet — personal site styles
+   Plain CSS, no build step. Organized top to bottom:
+   1. Variables & reset
+   2. Layout primitives
+   3. Nav
+   4. Hero / home
+   5. Cards (projects)
+   6. Project detail pages
+   7. Resume / contact
+   8. Footer
+   9. Responsive
+   ========================================================================== */
+
+/* ---------- 1. Variables & reset ---------- */
+:root {
+  --bg: #0b0d12;
+  --bg-elevated: #12151c;
+  --bg-elevated-2: #1a1e28;
+  --text: #e6e8ec;
+  --text-dim: #9aa1ad;
+  --text-faint: #6b7280;
+  --accent: #5ee6c9;
+  --accent-dim: #2f7a6c;
+  --border: #232733;
+  --radius: 10px;
+  --max-width: 880px;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--text-dim);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+}
+
+/* ---------- 2. Layout primitives ---------- */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 56px 0;
+}
+
+.section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  margin-bottom: 24px;
+}
+
+/* ---------- 3. Nav ---------- */
+header.site-header {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(11, 13, 18, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.nav-logo:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.nav-logo .dot {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+
+/* ---------- 4. Hero / home ---------- */
+.hero {
+  padding: 72px 0 48px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin-bottom: 16px;
+}
+
+.hero .lede {
+  font-size: 1.1rem;
+  max-width: 620px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--accent-dim);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #06231d;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #7ceedb;
+  border-color: #7ceedb;
+}
+
+/* ---------- 5. Cards (projects) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: block;
+  color: var(--text);
+}
+
+.card:hover {
+  text-decoration: none;
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card .tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.card p {
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* ---------- 6. Project detail pages ---------- */
+.project-header {
+  padding: 56px 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-header .tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.project-header h1 {
+  margin-top: 12px;
+}
+
+.meta-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+.media-placeholder {
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  margin: 24px 0;
+}
+
+.project-body h2 {
+  font-size: 1.3rem;
+  margin-top: 40px;
+}
+
+.project-body ul {
+  color: var(--text-dim);
+  padding-left: 1.2em;
+}
+
+.project-body li {
+  margin-bottom: 0.5em;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 32px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-faint);
+}
+
+/* ---------- 7. Resume / contact ---------- */
+.resume-actions,
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+}
+
+.resume-actions .btn,
+.contact-list a {
+  text-align: center;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: var(--bg-elevated);
+}
+
+.contact-list li a:hover {
+  text-decoration: none;
+  border-color: var(--accent-dim);
+}
+
+.contact-list .label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.placeholder-note {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  border-left: 2px solid var(--accent-dim);
+  padding-left: 12px;
+  margin: 20px 0;
+}
+
+/* ---------- 8. Footer ---------- */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 40px;
+}
+
+footer.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+footer.site-footer a {
+  color: var(--text-faint);
+}
+
+/* ---------- 9. Responsive ---------- */
+@media (max-width: 640px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .hero {
+    padding: 48px 0 32px;
+  }
+}

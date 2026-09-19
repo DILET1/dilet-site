@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Dilet</title>
+  <meta name="description" content="Get in touch with Dilet.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 8px;">
+      <div class="wrap">
+        <div class="hero-eyebrow">// Contact</div>
+        <h1>Get in touch</h1>
+        <p class="lede">The fastest way to reach me is email.</p>
+      </div>
+    </section>
+
+    <section style="padding-top: 8px;">
+      <div class="wrap">
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:you@example.com">
+              <span>Email</span>
+              <span class="label">you@example.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/your-username" target="_blank" rel="noopener">
+              <span>GitHub</span>
+              <span class="label">github.com/your-username</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">
+              <span>LinkedIn</span>
+              <span class="label">linkedin.com/in/your-profile</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="placeholder-note">
+          Placeholder note: swap in your real email, GitHub, and LinkedIn links (both the
+          <code>href</code> and the visible label text) before publishing. Since this alias is
+          for your professional dealings, consider using an email address at this domain
+          (e.g. <code>hello@dilet.dev</code>) if your registrar/host supports email forwarding —
+          Cloudflare and most registrars offer this for free.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
