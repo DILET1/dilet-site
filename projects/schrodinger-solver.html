@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1D Schrodinger Solver — Dilet</title>
+  <meta name="description" content="A Crank-Nicolson finite-difference solver for the 1D time-dependent Schrodinger equation, built from scratch in Python.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .nb-frame {
+      width: 100%;
+      height: 720px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .gif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin: 20px 0 8px;
+    }
+    .gif-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .gif-card img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+    .gif-card .cap {
+      padding: 14px 16px;
+    }
+    .gif-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+    }
+    .gif-card p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="../index.html">dilet<span class="dot">.</span>dev</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Projects</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="project-header">
+      <div class="wrap">
+        <span class="tag">Physics · Python · NumPy · Numerical Methods</span>
+        <h1>1D Schrodinger Equation Solver</h1>
+        <p>A from-scratch numerical solver for the time-dependent Schrodinger equation, using the
+          Crank-Nicolson finite-difference method, with an interactive notebook exploring particle
+          in a box, Gaussian wave packets, and finite potential barriers.</p>
+        <div class="meta-row">
+          <span>Method: Crank-Nicolson finite-difference</span>
+          <span>Status: Complete for now</span>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap project-body">
+        <a class="btn btn-primary" href="https://mybinder.org/v2/gh/DILET1/SchrodingerSolver/main?urlpath=%2Fdoc%2Ftree%2Fnotebook.ipynb">Interactive Notebook on Github, hosted by Binder</a>
+        <h2>What it does</h2>
+        <p>
+          This started as a way for me to familiarize myself with both the time-dependant Schrodinger
+          equation as well as solving PDEs numerically. My program derives the Crank-Nicolson finite-difference scheme from
+          the PDE itself, turns each time step into a tridiagonal linear system, and solves that
+          system frame-by-frame to animate how a wavefunction evolves under some classic potentials.
+        </p>
+
+        <h2>Results</h2>
+        <p>
+          The notebook itself uses live widgets to switch between wavefunctions and potentials
+          interactively. Instead, here are rendered results from running it, generated directly 
+          from the same simulation code. If you want to play with the actual program, click the 
+          button at the top of the page.
+        </p>
+
+        <div class="gif-grid">
+          <div class="gif-card">
+            <img src="../assets/schrodinger/gaussian_box.gif" alt="Animation of a Gaussian wave packet spreading over time inside an infinite square well" loading="lazy">
+            <div class="cap">
+              <h4>Gaussian wave packet, infinite square well</h4>
+              <p>A Gaussian initial state has no single definite energy, so it disperses over
+                time — exactly the spreading behavior you'd expect from the uncertainty
+                principle, reproduced numerically.</p>
+            </div>
+          </div>
+
+          <div class="gif-card">
+            <img src="../assets/schrodinger/eigenstate_box.gif" alt="Animation of the n=2 stationary state remaining nearly unchanged over time" loading="lazy">
+            <div class="cap">
+              <h4>n=2 stationary state — stability check</h4>
+              <p>Seeding the solver with an exact energy eigenstate should leave the
+                probability density essentially unchanged over time. It does — this is the
+                numerical method validating itself.</p>
+            </div>
+          </div>
+
+          <div class="gif-card">
+            <img src="../assets/schrodinger/barrier_check.gif" alt="Animation of a Gaussian wave packet interacting with a finite potential barrier, showing partial reflection" loading="lazy">
+            <div class="cap">
+              <h4>Wave packet vs. finite square barrier</h4>
+              <p>Introducing a finite potential barrier (shaded region) measurably changes the
+                wavefunction's evolution compared to the free case - check out that tunnelling!</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>The derivation and code</h2>
+        <p>
+          The full notebook with the derivations in LaTeX, and the actual simulation code is embedded below.
+        </p>
+
+        <iframe class="nb-frame" src="../assets/schrodinger/notebook.html" title="1D Schrodinger solver notebook"></iframe>
+        <p style="margin-top: 10px;">
+          <a href="../assets/schrodinger/notebook.html" target="_blank" rel="noopener">Open the notebook in a new tab &rarr;</a>
+        </p>
+        
+        <a class="back-link" href="index.html">&larr; Back to all projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Dilet</span>
+      <span><a href="../contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
